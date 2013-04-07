@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+	
+<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerInParent="true"
+	     >
+    
+	    <Spinner
+	        android:id="@+id/depsel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/BldSel"
+	        android:spinnerMode="dialog" >
+	        
+	    </Spinner>
+	    <TextView
+	        android:id="@+id/Building"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/depsel"
+	        android:textIsSelectable="true"
+	        android:textAlignment="center">
+	        
+	    </TextView>
+  
+	</RelativeLayout>
+	
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerInParent="true" >
+	
+	    <Button
+	        android:id="@+id/Select_Bld"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/Select_B" 
+	        android:onClick="Building_Selected">
+	    </Button>
+	</RelativeLayout>
+	
+</RelativeLayout>

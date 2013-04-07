@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My First App</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">Tour</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="FAQ">FAQ</string>
+    <string name="tour">Begin Tour</string>
+    <string name="directions">Get Directions</string>
+    <string name="title_activity_faq">FAQ</string>
+    <string name="title_activity_directions">Directions</string>
+    <string name="begin">Start:</string>
+    <string name="end">End:</string>
+    <string name="Enter_SLocation_Settings">Enter Start Location</string>
+    <string name="Enter_ELocation_Settings">Enter End Location</string>
+    <string name="Get_Directions">Get Directions</string>
+    <string name="Find_Department">Locate a Department</string>
+    <string name="Select_B">Select Building</string>
+    <string name="Enter_Dept_Name">Department Name</string>
+	<string name="BldSel">Building Select</string>
+    <string name="title_activity_find">FindActivity</string>
+    
+    <string-array name="building_options">
+        <item>Computer Science Building</item>
+        <item>Havener Center</item>
+        <item>Curtis Laws Wilson Library</item>
+        <item>Parker Hall</item>
+        <item>Toomey Hall</item>
+    </string-array>
+    <string-array name="building_locs">
+        <item>Computer Science, Rolla, MO</item>
+        <item>Havener Center, 1346 N Bishop Ave, Rolla, MO</item>
+        <item>Curtis Laws Wilson Library, Rolla, MO</item>
+        <item>Parker Hall, 121 General Services Bldg, Missouri University of Science and Technology, Rolla, MO 65401</item>
+        <item>Toomey Hall, Rolla, MO</item>
+    </string-array>
+	<string-array name="departments">
+	    <item>Computer Science</item>
+	    <item>Student Life</item>
+	    <item>BookStore</item>
+	    <item>Mechanical Engineering</item>
+	    <item>Aerospace Engineering</item>
+	    <item>IT Help Desk</item>
+	    <item>Registrar</item>
+	    <item>Cashier\'s Office</item>
+	    <item>Financial Aid</item>
+	</string-array>
+    
+
+</resources>
