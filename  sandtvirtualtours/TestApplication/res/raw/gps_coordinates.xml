@@ -1,0 +1,27 @@
+<buildings>
+  <building>
+    <name>Havener Center</name>
+	<lat>37.95470937643882</lat>
+	<lng>-91.77638947963715</lng>
+  </building>
+  <building>
+    <name>Toomey Hall</name>
+	<lat>37.95464381406887</lat>
+	<lng>-91.7739862203598</lng>
+  </building>
+  <building>
+    <name>Parker Hall</name>
+	<lat>37.95437733415636</lat>
+	<lng>-91.7732486128807</lng>
+  </building>
+  <building>
+    <name>Library</name>
+	<lat>37.95539672034329</lat>
+	<lng>-91.77352219820023</lng>
+  </building>
+  <building>
+    <name>Computer Science</name>
+	<lat>37.95579220453634</lat>
+	<lng>-91.774021089077</lng>
+  </building>
+</buildings>
