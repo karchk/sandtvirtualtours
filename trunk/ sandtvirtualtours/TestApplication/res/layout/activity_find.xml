@@ -25,7 +25,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/depsel"
 	        android:textIsSelectable="true"
-	        android:textAlignment="center">
+	        android:gravity="center">
 	        
 	    </TextView>
   
