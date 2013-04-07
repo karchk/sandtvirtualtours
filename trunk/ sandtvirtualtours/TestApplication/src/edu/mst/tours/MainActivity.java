@@ -1,10 +1,15 @@
 package edu.mst.tours;
 
+import java.util.HashSet;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
+import edu.mst.tours.model.Building;
+import edu.mst.tours.parsers.LocationsParser;
 
 public class MainActivity extends Activity {
 
@@ -14,6 +19,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        LocationsParser l = new LocationsParser();
+        HashSet<Building> buildings = l.getBuildings(this);
+        Toast.makeText(this, buildings.toString(), Toast.LENGTH_LONG).show();
+        
     }
 
     @Override
