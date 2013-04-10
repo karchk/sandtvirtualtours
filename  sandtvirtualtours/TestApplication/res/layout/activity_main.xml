@@ -9,20 +9,20 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/tour"
-        android:onClick="goToTour" />
+        android:id="@+mainactivity/bt_tour" />
     
      <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/FAQ" 
-        android:onClick="goToFAQ" />
+        android:id="@+mainactivity/bt_faq" />
      
      <Button 
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_weight="1"
-         android:text="@string/directions"
-         android:onClick="goToDirections" />
+         android:id="@+mainactivity/bt_directions"
+         android:text="@string/directions" />
 
 </LinearLayout>
