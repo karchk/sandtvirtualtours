@@ -57,8 +57,7 @@
 	        android:id="@+id/Directions"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/Get_Directions" 
-	        android:onClick="QueryDirections">
+	        android:text="@string/Get_Directions" >
 	    </Button>
 	    
 	    <Button
@@ -66,8 +65,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/Find_Department"
-	        android:layout_toRightOf="@+id/Directions"
-	        android:onClick="FindBuilding" >
+	        android:layout_toRightOf="@+id/Directions">
 	    </Button>
 	</RelativeLayout>
 	
