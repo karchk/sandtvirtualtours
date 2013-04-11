@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_centerInParent="true"
+	    android:orientation="vertical" >
+	    
+	    <Spinner
+	        android:id="@+directionsactivity/sp_from"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/directionsactivity_buildingselectorprompt"
+	        android:entries="@array/building_options"
+	        android:spinnerMode="dialog" />
+	    
+	    <Spinner
+	        android:id="@+directionsactivity/sp_to"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/directionsactivity_buildingselectorprompt"
+	        android:entries="@array/building_options"
+	        android:spinnerMode="dialog" />
+	</LinearLayout>
+	
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_alignParentBottom="true" >
+	
+	    <Button
+	        android:id="@+directionsactivity/bt_getdirections"
+	        android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:text="@string/directionsactivity_getdirections" />
+	    
+	    <Button
+	        android:id="@+directionsactivity/bt_finddepartment"
+	        android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:text="@string/directionsactivity_finddepartment" />
+	</LinearLayout>
+</RelativeLayout>

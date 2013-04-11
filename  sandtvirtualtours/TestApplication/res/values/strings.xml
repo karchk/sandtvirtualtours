@@ -17,11 +17,11 @@
     <string name="end">End:</string>
     <string name="Enter_SLocation_Settings">Enter Start Location</string>
     <string name="Enter_ELocation_Settings">Enter End Location</string>
-    <string name="Get_Directions">Get Directions</string>
-    <string name="Find_Department">Locate a Department</string>
-    <string name="Select_B">Select Building</string>
+    <string name="directionsactivity_getdirections">Get Directions</string>
+    <string name="directionsactivity_finddepartment">Locate a Department</string>
+    <string name="findactivity_selectbuilding">Select Building</string>
     <string name="Enter_Dept_Name">Department Name</string>
-    <string name="BldSel">Building Select</string>
+    <string name="directionsactivity_buildingselectorprompt">Building Select</string>
     <string name="title_activity_find">FindActivity</string>
     <string-array name="building_options">
         <item>Computer Science Building</item>
