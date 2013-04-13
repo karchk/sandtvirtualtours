@@ -1,6 +1,6 @@
 package edu.mst.tours.model;
 
-import com.google.android.maps;
+import com.google.android.maps.GeoPoint;
 
 public class Building {
 	

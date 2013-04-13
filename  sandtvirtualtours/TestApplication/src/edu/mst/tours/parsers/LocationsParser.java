@@ -7,6 +7,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import android.content.Context;
+import android.view.View.OnClickListener;
 
 import com.google.android.maps.GeoPoint;
 
@@ -41,5 +42,4 @@ public class LocationsParser {
 		
 		return buildings;
 	}
-
 }

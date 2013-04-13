@@ -15,7 +15,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:entries="@array/building_locs"
+	        android:entries="@array/building_options"
 	        android:spinnerMode="dialog" />
 	    
 	    <Spinner
@@ -23,7 +23,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:entries="@array/building_locs"
+	        android:entries="@array/building_options"
 	        android:spinnerMode="dialog" />
 	</LinearLayout>
 	
@@ -46,5 +46,6 @@
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
 	        android:text="@string/directionsactivity_finddepartment" />
+	    
 	</LinearLayout>
 </RelativeLayout>
