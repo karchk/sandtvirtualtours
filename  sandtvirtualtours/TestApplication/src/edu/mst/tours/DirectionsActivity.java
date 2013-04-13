@@ -13,6 +13,7 @@ public class DirectionsActivity extends Activity {
 
 	private final static String GOOGLEMAPS_URL_PREFIX = "http://maps.google.com/maps?saddr=";
 	private final static String GOOGLEMAPS_URL_TO_APPEND = "&daddr=";
+	private final static String GOOGLEMAPS_URL_TYPE_APPEND = "&dirflg=w";
 	
 	private Button bt_getdirections, bt_finddepartment;
 	private Spinner sp_from, sp_to;
@@ -36,8 +37,14 @@ public class DirectionsActivity extends Activity {
 			public void onClick(View v) {
 				String from = sp_from.getSelectedItem().toString();
 				String to = sp_to.getSelectedItem().toString();
+				//Access the gpscoordinates.xml to get gps for walking directions (more accurate)
+				//String slat 
+				//String slng
+				//String dlat
+				//String dlng
 				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-					    Uri.parse(GOOGLEMAPS_URL_PREFIX + from + GOOGLEMAPS_URL_TO_APPEND + to));
+					    Uri.parse(GOOGLEMAPS_URL_PREFIX + from + GOOGLEMAPS_URL_TO_APPEND + to + GOOGLEMAPS_URL_TYPE_APPEND));
+						//Uri.parse(GOOGLEMAPS_URL_PREFIX + slat + ',' + slng + GOOGLEMAPS_URL_TO_APPEND + dlat + ',' + dlng + GOOGLEMAPS_URL_TYPE_APPEND));
 					startActivity(intent);
 			}
 		});
