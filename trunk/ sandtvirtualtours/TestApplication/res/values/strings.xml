@@ -24,9 +24,9 @@
     <string name="directionsactivity_buildingselectorprompt">Building Select</string>
     <string name="title_activity_find">FindActivity</string>
     <string-array name="building_options">
-        <item>Computer Science Building</item>
+        <item>Computer Science</item>
         <item>Havener Center</item>
-        <item>Curtis Laws Wilson Library</item>
+        <item>Library</item>
         <item>Parker Hall</item>
         <item>Toomey Hall</item>
     </string-array>
