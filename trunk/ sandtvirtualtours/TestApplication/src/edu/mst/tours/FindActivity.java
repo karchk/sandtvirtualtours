@@ -1,8 +1,16 @@
 package edu.mst.tours;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
+import edu.mst.tours.model.Building;
+import edu.mst.tours.parsers.LocationsParser;
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
@@ -13,7 +21,8 @@ public class FindActivity extends Activity {
 
 	private Spinner sp_departmentselector;
 	private TextView tv_building;
-	private Button bt_selectbuilding;
+	private Button bt_selectstartbuilding;
+	private Button bt_selectendbuilding;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,20 @@ public class FindActivity extends Activity {
 	private void loadViews() {
 		sp_departmentselector = (Spinner) findViewById(R.findactivity.sp_departmentselector);
 		tv_building = (TextView) findViewById(R.findactivity.tv_building);
-		bt_selectbuilding = (Button) findViewById(R.findactivity.bt_selectbuilding);
+		bt_selectstartbuilding = (Button) findViewById(R.findactivity.bt_selectstartbuilding);
+		bt_selectendbuilding = (Button) findViewById(R.findactivity.bt_selectendbuildling);
+		
+		bt_selectstartbuilding.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		bt_selectendbuilding.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
 	}
 }

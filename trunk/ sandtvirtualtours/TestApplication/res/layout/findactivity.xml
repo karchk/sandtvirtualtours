@@ -25,10 +25,26 @@
 	        android:gravity="center" />
 	</RelativeLayout>
 	
-    <Button
-        android:id="@+findactivity/bt_selectbuilding"
-        android:layout_alignParentBottom="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/findactivity_selectbuilding" />
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_alignParentBottom="true" >
+	    
+	    <Button
+	        android:id="@+findactivity/bt_selectstartbuilding"
+	        android:layout_alignParentBottom="true"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:text="@string/findactivity_selectstartbuilding" />
+	    
+	    <Button 
+	        android:id="@+findactivity/bt_selectendbuildling"
+	        android:layout_alignParentBottom="true"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:text="@string/findactivity_selectendbuilding" />
+    </LinearLayout>
 </RelativeLayout>
