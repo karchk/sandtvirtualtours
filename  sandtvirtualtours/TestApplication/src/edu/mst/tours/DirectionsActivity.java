@@ -64,7 +64,6 @@ public class DirectionsActivity extends Activity {
 		        	}
 		        }
 				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-					    //Uri.parse(GOOGLEMAPS_URL_PREFIX + from + GOOGLEMAPS_URL_TO_APPEND + to + GOOGLEMAPS_URL_TYPE_APPEND));
 						Uri.parse(GOOGLEMAPS_URL_PREFIX + startlat + ',' + startlng + GOOGLEMAPS_URL_TO_APPEND + deslat + ',' + deslng + GOOGLEMAPS_URL_TYPE_APPEND));
 				startActivity(intent);
 			}
