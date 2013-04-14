@@ -23,7 +23,8 @@ public class FindActivity extends Activity {
 	private TextView tv_building;
 	private Button bt_selectstartbuilding;
 	private Button bt_selectendbuilding;
-	
+	public final static String BUILDING_NAME = "edu.mst.tours.building";
+	public final static String START_ADDR = "edu.mst.tours.start";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,13 +60,21 @@ public class FindActivity extends Activity {
 		bt_selectstartbuilding.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
+				Intent startDirections = new Intent(v.getContext(),DirectionsActivity.class);
+				String blding = tv_building.getText().toString();
+				startDirections.putExtra(BUILDING_NAME, blding);
+				startDirections.putExtra(START_ADDR, true);
+				startActivity(startDirections);
 			}
 		});
 		bt_selectendbuilding.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
+				Intent startDirections = new Intent(v.getContext(),DirectionsActivity.class);
+				String blding = tv_building.getText().toString();
+				startDirections.putExtra(BUILDING_NAME, blding);
+				startDirections.putExtra(START_ADDR, false);
+				startActivity(startDirections);
 			}
 		});
 	}

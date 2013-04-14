@@ -21,7 +21,6 @@ public class DirectionsActivity extends Activity {
 	private final static String GOOGLEMAPS_URL_PREFIX = "http://maps.google.com/maps?saddr=";
 	private final static String GOOGLEMAPS_URL_TO_APPEND = "&daddr=";
 	private final static String GOOGLEMAPS_URL_TYPE_APPEND = "&dirflg=w";
-	protected Context context;
 	
 	private Button bt_getdirections, bt_finddepartment;
 	private Spinner sp_from, sp_to;
@@ -30,7 +29,6 @@ public class DirectionsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.directionsactivity);
-		context = this;
 		loadViews();
 	}
 	
@@ -40,13 +38,45 @@ public class DirectionsActivity extends Activity {
 		sp_from = (Spinner) findViewById(R.directionsactivity.sp_from);
 		sp_to = (Spinner) findViewById(R.directionsactivity.sp_to);
 		
+		Intent loadIntent = getIntent();
+		boolean isStart = loadIntent.getBooleanExtra(FindActivity.START_ADDR, false);
+		String bname = loadIntent.getStringExtra(FindActivity.BUILDING_NAME);
+		if(isStart && bname != null)
+		{
+			int position = 0;
+			String[] adapter = getResources().getStringArray(R.array.building_options);
+			for(int i = 0; i < adapter.length;  i++)
+			{
+				if(adapter[i].equals(bname))
+				{
+					position = i;
+					break;
+				}
+			}
+			sp_from.setSelection(position);
+		}
+		else if(!isStart && bname != null)
+		{
+			int position = 0;
+			String[] adapter = getResources().getStringArray(R.array.building_options);
+			for(int i = 0; i < adapter.length;  i++)
+			{
+				if(adapter[i].equals(bname))
+				{
+					position = i;
+					break;
+				}
+			}
+			sp_to.setSelection(position);
+		}
+		
 		bt_getdirections.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				String from = sp_from.getSelectedItem().toString();
 				String to = sp_to.getSelectedItem().toString();
 				LocationsParser l = new LocationsParser();
-		        HashSet<Building> buildings = l.getBuildings(context);
+		        HashSet<Building> buildings = l.getBuildings(v.getContext());
 		        Iterator<Building> i = buildings.iterator();
 		        float startlat = 0, startlng = 0, deslat = 0, deslng = 0;
 		        while(i.hasNext())
