@@ -3,25 +3,30 @@
     <name>Havener Center</name>
 	<lat>37.95470937643882</lat>
 	<lng>-91.77638947963715</lng>
+	<img>http://swtdesign.com/wp-content/gallery/missouri-st-havener-center-and-student-center-plaza/080722_umr-10.jpg</img>
   </building>
   <building>
     <name>Toomey Hall</name>
 	<lat>37.95464381406887</lat>
 	<lng>-91.7739862203598</lng>
+	<img>http://mae.mst.edu/media/academic/mae/images/building_front_m.jpg</img>
   </building>
   <building>
     <name>Parker Hall</name>
 	<lat>37.95437733415636</lat>
 	<lng>-91.7732486128807</lng>
+	<img>http://farm4.staticflickr.com/3082/3095521817_7edcc359b3_o.jpg</img>
   </building>
   <building>
     <name>Library</name>
 	<lat>37.95539672034329</lat>
 	<lng>-91.77352219820023</lng>
+	<img>http://archives.mst.edu/media/campussupport/archives/images/UMR_recent_008.jpg</img>
   </building>
   <building>
     <name>Computer Science</name>
 	<lat>37.95579220453634</lat>
 	<lng>-91.774021089077</lng>
+	<img>http://farm4.staticflickr.com/3064/3096410038_42392fcd4f_z.jpg</img>
   </building>
 </buildings>

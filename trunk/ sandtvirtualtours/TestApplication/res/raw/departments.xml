@@ -1,0 +1,38 @@
+<departments>
+  <department>
+    <name>Computer Science</name>
+	<buildingname>Computer Science</buildingname>
+  </department>
+  <department>
+    <name>Student Life</name>
+	<buildingname>Havener Center</buildingname>
+  </department>
+  <department>
+    <name>BookStore</name>
+	<buildingname>Havener Center</buildingname>
+  </department>
+  <department>
+    <name>Mechanical Engineering</name>
+	<buildingname>Toomey Hall</buildingname>
+  </department>
+  <department>
+    <name>Aerospace Engineering</name>
+	<buildingname>Toomey Hall</buildingname>
+  </department>
+  <department>
+    <name>IT Help Desk</name>
+	<buildingname>Library</buildingname>
+  </department>
+  <department>
+    <name>Registrar</name>
+	<buildingname>Parker Hall</buildingname>
+  </department>
+  <department>
+    <name>Cashier's Office</name>
+	<buildingname>Parker Hall</buildingname>
+  </department>
+  <department>
+    <name>Financial Aid</name>
+	<buildingname>Parker Hall</buildingname>
+  </department>
+</departments>
