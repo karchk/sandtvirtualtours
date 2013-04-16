@@ -13,5 +13,10 @@ public class FAQ {
 	public HashSet<FAQEntry> getEntries() {
 		return entries;
 	}
+	
+	@Override
+	public String toString() {
+		return entries.toString();
+	}
 
 }

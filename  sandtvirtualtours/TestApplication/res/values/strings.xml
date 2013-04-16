@@ -24,29 +24,11 @@
     <string name="Enter_Dept_Name">Department Name</string>
     <string name="directionsactivity_buildingselectorprompt">Building Select</string>
     <string name="title_activity_find">FindActivity</string>
-    <string-array name="building_options">
-        <item>Computer Science</item>
-        <item>Havener Center</item>
-        <item>Library</item>
-        <item>Parker Hall</item>
-        <item>Toomey Hall</item>
-    </string-array>
     <string-array name="building_locs">
         <item>Computer Science, Rolla, MO</item>
         <item>Havener Center, 1346 N Bishop Ave, Rolla, MO</item>
         <item>Curtis Laws Wilson Library, Rolla, MO</item>
-        <item> Parker Hall, Missouri University of Science and Technology, Rolla, MO</item>
+        <item>Parker Hall, Missouri University of Science and Technology, Rolla, MO</item>
         <item>Toomey Hall, Rolla, MO</item>
-    </string-array>
-    <string-array name="departments">
-        <item>Computer Science</item>
-        <item>Student Life</item>
-        <item>BookStore</item>
-        <item>Mechanical Engineering</item>
-        <item>Aerospace Engineering</item>
-        <item>IT Help Desk</item>
-        <item>Registrar</item>
-        <item>Cashier\'s Office</item>
-        <item>Financial Aid</item>
     </string-array>
 </resources>

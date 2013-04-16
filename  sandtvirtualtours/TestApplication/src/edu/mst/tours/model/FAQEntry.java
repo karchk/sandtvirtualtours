@@ -25,4 +25,9 @@ public class FAQEntry {
 	public int hashCode() {
 		return getQuestion().hashCode() + getAnswer().hashCode();
 	}
+	
+	@Override
+	public String toString() {
+		return getQuestion() + " - " + getAnswer();
+	}
 }

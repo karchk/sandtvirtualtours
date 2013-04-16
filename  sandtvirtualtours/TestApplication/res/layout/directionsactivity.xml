@@ -15,7 +15,6 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:entries="@array/building_options"
 	        android:spinnerMode="dialog" />
 	    
 	    <Spinner
@@ -23,7 +22,6 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:entries="@array/building_options"
 	        android:spinnerMode="dialog" />
 	</LinearLayout>
 	
