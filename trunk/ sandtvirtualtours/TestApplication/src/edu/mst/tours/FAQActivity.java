@@ -1,25 +1,20 @@
 package edu.mst.tours;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
+import edu.mst.tours.adapters.FAQListAdapter;
 import edu.mst.tours.model.FAQ;
 import edu.mst.tours.parsers.FAQParser;
 
-public class FAQActivity extends Activity {
+public class FAQActivity extends ListActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		setContentView(R.layout.faqactivity);
+		
 		FAQ faq = new FAQParser(this).getFAQ();
 		
-		Toast.makeText(this, faq.toString(), Toast.LENGTH_LONG).show();
-		
-		TextView textView = new TextView(this);
-		textView.setTextSize(40);
-		textView.setText("FAQ");
-		setContentView(textView);
+		setListAdapter(new FAQListAdapter(this, faq));
 	}
 }
