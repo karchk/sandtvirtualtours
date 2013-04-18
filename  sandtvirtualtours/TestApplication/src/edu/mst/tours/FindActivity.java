@@ -1,6 +1,7 @@
 package edu.mst.tours;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 import android.app.Activity;
@@ -68,6 +69,7 @@ public class FindActivity extends Activity {
 		for (Department dept : departments) {
 			departmentsNames.add(dept.getName());
 		}
+		Collections.sort(departmentsNames);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, departmentsNames);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp_departmentselector.setAdapter(adapter);
@@ -96,8 +98,7 @@ public class FindActivity extends Activity {
 		String blding = tv_building.getText().toString();
 		startDirections.putExtra(BUILDING_NAME, blding);
 		startDirections.putExtra(START_ADDR, isStart);
-		setResult(RESULT_OK,startDirections);
-		//startActivity(startDirections); //TODO: Have a look a startActivityForResult
+		setResult(RESULT_OK, startDirections);
 		finish();
 	}
 }
