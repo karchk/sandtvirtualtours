@@ -90,28 +90,28 @@ public class DirectionsActivity extends Activity {
 		 		 String bname = data.getStringExtra(FindActivity.BUILDING_NAME);
 		 		 Object[] adapter = buildings.keySet().toArray();
 		 		 if(isStart && bname != null) {
-		 			int position = 0;
-		 			for(int i = 0; i < adapter.length;  i++) {
-		 				if(adapter[i].equals(bname)) {
-		 					position = i;
-		 					break;
-		 				}
-		 			 }
-		 			sp_from.setSelection(position);
+			 			int position = 0;
+			 			for(int i = 0; i < adapter.length;  i++) {
+			 				if(adapter[i].equals(bname)) {
+			 					position = i;
+			 					break;
+			 				}
+			 			 }
+			 			sp_from.setSelection(position);
 		 		 } else if(!isStart && bname != null) {
-		 			int position = 0;
-		 			for(int i = 0; i < adapter.length;  i++) {
-		 				if(adapter[i].equals(bname)) {
-		 					position = i;
-		 					break;
-		 				}
-		 			}
-		 			sp_to.setSelection(position);
+			 			int position = 0;
+			 			for(int i = 0; i < adapter.length;  i++) {
+			 				if(adapter[i].equals(bname)) {
+			 					position = i;
+			 					break;
+			 				}
+			 			}
+			 			sp_to.setSelection(position);
 		 			}        
-		     	}
-		  }
-		     if (resultCode == RESULT_CANCELED) {    
-		         //Write your code if there's no result
 		     }
-		  }
+		 }
+	     if (resultCode == RESULT_CANCELED) {    
+	         //Write your code if there's no result
+	     }
+	}
 }
