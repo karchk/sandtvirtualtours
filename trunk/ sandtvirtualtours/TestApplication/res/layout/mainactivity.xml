@@ -9,20 +9,26 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/tour"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/ic_directions"
         android:id="@+mainactivity/bt_tour" />
     
      <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/FAQ" 
+        android:text="@string/FAQ"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/ic_faq" 
         android:id="@+mainactivity/bt_faq" />
      
      <Button 
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_weight="1"
+         android:textSize="25sp"
          android:id="@+mainactivity/bt_directions"
+         android:drawableLeft="@drawable/ic_pin"
          android:text="@string/directions" />
 
 </LinearLayout>
