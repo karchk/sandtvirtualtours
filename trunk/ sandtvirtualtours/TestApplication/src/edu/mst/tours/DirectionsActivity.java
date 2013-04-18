@@ -34,30 +34,6 @@ public class DirectionsActivity extends Activity {
 		buildings = BuildingsParser.getBuildings(this);
 		
 		loadViews();
-		
-		Intent loadIntent = getIntent();
-		boolean isStart = loadIntent.getBooleanExtra(FindActivity.START_ADDR, false);
-		String bname = loadIntent.getStringExtra(FindActivity.BUILDING_NAME);
-		Object[] adapter = buildings.keySet().toArray();
-		if(isStart && bname != null) {
-			int position = 0;
-			for(int i = 0; i < adapter.length;  i++) {
-				if(adapter[i].equals(bname)) {
-					position = i;
-					break;
-				}
-			}
-			sp_from.setSelection(position);
-		} else if(!isStart && bname != null) {
-			int position = 0;
-			for(int i = 0; i < adapter.length;  i++) {
-				if(adapter[i].equals(bname)) {
-					position = i;
-					break;
-				}
-			}
-			sp_to.setSelection(position);
-		}
 	}
 	
 	private void loadViews() {
@@ -88,7 +64,6 @@ public class DirectionsActivity extends Activity {
 		        		deslng = (float) (cur.getLocation().getLongitudeE6() / 1E6);
 		        	}
 		        }
-				
 		        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
 						Uri.parse(GOOGLEMAPS_URL_PREFIX + startlat
 								+ ',' + startlng + GOOGLEMAPS_URL_TO_APPEND
@@ -101,8 +76,42 @@ public class DirectionsActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(v.getContext(), FindActivity.class);
-		        startActivity(intent);
+		        startActivityForResult(intent,1);
 			}
 		});
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		  if (requestCode == 1) {
+		     if(resultCode == RESULT_OK){      
+		    	 //Intent data = getIntent();
+		 		 boolean isStart = data.getBooleanExtra(FindActivity.START_ADDR, false);
+		 		 String bname = data.getStringExtra(FindActivity.BUILDING_NAME);
+		 		 Object[] adapter = buildings.keySet().toArray();
+		 		 if(isStart && bname != null) {
+		 			int position = 0;
+		 			for(int i = 0; i < adapter.length;  i++) {
+		 				if(adapter[i].equals(bname)) {
+		 					position = i;
+		 					break;
+		 				}
+		 			 }
+		 			sp_from.setSelection(position);
+		 		 } else if(!isStart && bname != null) {
+		 			int position = 0;
+		 			for(int i = 0; i < adapter.length;  i++) {
+		 				if(adapter[i].equals(bname)) {
+		 					position = i;
+		 					break;
+		 				}
+		 			}
+		 			sp_to.setSelection(position);
+		 			}        
+		     	}
+		  }
+		     if (resultCode == RESULT_CANCELED) {    
+		         //Write your code if there's no result
+		     }
+		  }
 }

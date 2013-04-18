@@ -36,7 +36,6 @@ public class FindActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.findactivity);
-		
 		departments = new DepartmentsParser(this).getDepartments();
 		loadViews();		
 		
@@ -97,7 +96,8 @@ public class FindActivity extends Activity {
 		String blding = tv_building.getText().toString();
 		startDirections.putExtra(BUILDING_NAME, blding);
 		startDirections.putExtra(START_ADDR, isStart);
-		startActivity(startDirections); //TODO: Have a look a startActivityForResult
+		setResult(RESULT_OK,startDirections);
+		//startActivity(startDirections); //TODO: Have a look a startActivityForResult
 		finish();
 	}
 }
