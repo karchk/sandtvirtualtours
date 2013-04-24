@@ -17,6 +17,13 @@
 	        android:prompt="@string/directionsactivity_buildingselectorprompt"
 	        android:spinnerMode="dialog" />
 	    
+	    <Button
+	        android:id="@+directionsactivity/bt_cur"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/directionsactivity_usecurrentlocation" >
+	    </Button>
+	    
 	    <Spinner
 	        android:id="@+directionsactivity/sp_to"
 	        android:layout_width="wrap_content"

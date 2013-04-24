@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,21 +30,24 @@ public class DirectionsActivity extends Activity {
 
 	private HashMap<String, Building> buildings;
 
-	private Button bt_getdirections, bt_finddepartment;
+	private Button bt_getdirections, bt_finddepartment, bt_cur;
 	private Spinner sp_from, sp_to;
+	
+	private boolean useCur = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.directionsactivity);
 		buildings = BuildingsParser.getBuildings(this);
-
+		
 		loadViews();
 	}
 
 	private void loadViews() {
 		bt_getdirections = (Button) findViewById(R.directionsactivity.bt_getdirections);
 		bt_finddepartment = (Button) findViewById(R.directionsactivity.bt_finddepartment);
+		bt_cur = (Button) findViewById(R.directionsactivity.bt_cur);
 		ArrayAdapter<String> spinnersAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, new ArrayList<String>(buildings.keySet()));
 		spinnersAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp_from = (Spinner) findViewById(R.directionsactivity.sp_from);
@@ -48,20 +55,52 @@ public class DirectionsActivity extends Activity {
 		sp_from.setAdapter(spinnersAdapter);
 		sp_to.setAdapter(spinnersAdapter);
 
+		bt_cur.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				useCur = !useCur;
+				if(useCur) {
+					bt_cur.setText(R.string.directionsactivity_nocurrentlocation);
+					sp_from.setEnabled(false);
+				} else {
+					bt_cur.setText(R.string.directionsactivity_usecurrentlocation);
+					sp_from.setEnabled(true);
+				}
+			}
+		});
+		
 		bt_getdirections.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				String from = sp_from.getSelectedItem().toString();
 				String to = sp_to.getSelectedItem().toString();
-				if(from.equals(to)){
+				if(from.equals(to) && !useCur){
 					Toast.makeText(v.getContext(),
 							"Your starting point is the same as the target.\nPlease change one of them.", Toast.LENGTH_SHORT).show();
 				}else{
 					Building buildingFrom = buildings.get(from);
 					Building buildingTo = buildings.get(to);
-					
-					float startlat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
-					float startlng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
+					float startlat = 0;
+					float startlng = 0;
+					if(useCur) {
+						Criteria locCrit = new Criteria();
+						locCrit.setAccuracy(Criteria.ACCURACY_FINE);
+						locCrit.setAltitudeRequired(false);
+						locCrit.setBearingRequired(false);
+						locCrit.setCostAllowed(false);
+						locCrit.setPowerRequirement(Criteria.POWER_LOW);
+						locCrit.setSpeedRequired(false);
+						
+						LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+						String bProvider = lm.getBestProvider(locCrit, true);
+						
+						Location cur = lm.getLastKnownLocation(bProvider); 
+						startlat = (float) (cur.getLatitude());
+						startlng = (float) (cur.getLongitude());
+					} else {
+						startlat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
+						startlng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
+					}
 					float deslat = (float) (buildingTo.getLocation().getLatitudeE6() / 1E6);
 					float deslng = (float) (buildingTo.getLocation().getLongitudeE6() / 1E6);
 
