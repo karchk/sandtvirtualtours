@@ -21,6 +21,8 @@
     <string name="directionsactivity_finddepartment">Locate a Department</string>
     <string name="directionsactivity_usecurrentlocation">Using Current Location</string>
     <string name="directionsactivity_nocurrentlocation">Not Using Current Location</string>
+    <string name="directionsactivity_from">From:</string>
+    <string name="directionsactivity_to">To:</string>
     <string name="findactivity_selectstartbuilding">Select Start Building</string>
     <string name="findactivity_selectendbuilding">Select Destination Building</string>
     <string name="Enter_Dept_Name">Department Name</string>
