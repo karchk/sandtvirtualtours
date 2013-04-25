@@ -7,29 +7,75 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
-	    android:layout_centerHorizontal="true"
+	    android:layout_centerInParent="true"
 	    android:orientation="vertical" >
 	    
-	    <Spinner
-	        android:id="@+directionsactivity/sp_from"
-	        android:layout_width="wrap_content"
+	    <LinearLayout
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:spinnerMode="dialog" />
-	    
-	    <Button
-	        android:id="@+directionsactivity/bt_cur"
-	        android:layout_width="wrap_content"
+	        android:orientation="horizontal">
+	        
+	        <TextView
+	            android:layout_width="0dp"
+	            android:layout_weight="0.3"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            android:gravity="center"
+	            android:textSize="20sp"
+	            android:text="From:"/>
+	        
+	        <Spinner
+		        android:id="@+directionsactivity/sp_from"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:layout_gravity="center"
+		        android:prompt="@string/directionsactivity_buildingselectorprompt"
+		        android:spinnerMode="dialog" />
+	        
+	        <ImageButton
+		        android:id="@+directionsactivity/bt_cur"
+		        android:layout_width="0dp"
+		        android:layout_height="48dp"
+		        android:layout_gravity="center"
+		        android:layout_weight="0.5"
+		        android:scaleType="fitCenter"
+		        android:adjustViewBounds="true"
+		        android:src="@drawable/ic_pin" />
+	    </LinearLayout>
+	    <LinearLayout
+	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:text="@string/directionsactivity_usecurrentlocation" >
-	    </Button>
-	    
-	    <Spinner
-	        android:id="@+directionsactivity/sp_to"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:prompt="@string/directionsactivity_buildingselectorprompt"
-	        android:spinnerMode="dialog" />
+	        android:orientation="horizontal">
+	        
+	        <TextView
+	            android:layout_width="0dp"
+	            android:layout_weight="0.3"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            android:gravity="center"
+	            android:textSize="20sp"
+	            android:text="To:"/>
+	        
+	        <Spinner
+		        android:id="@+directionsactivity/sp_to"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:layout_gravity="center"
+		        android:prompt="@string/directionsactivity_buildingselectorprompt"
+		        android:spinnerMode="dialog" />
+	        
+	       <ImageButton
+		        android:visibility="invisible"
+		        android:layout_width="0dp"
+		        android:layout_height="48dp"
+		        android:layout_gravity="center"
+		        android:layout_weight="0.5"
+		        android:scaleType="fitCenter"
+		        android:adjustViewBounds="true"
+		        android:src="@drawable/ic_pin" />
+	    </LinearLayout>
 	</LinearLayout>
 	
 	<LinearLayout 
