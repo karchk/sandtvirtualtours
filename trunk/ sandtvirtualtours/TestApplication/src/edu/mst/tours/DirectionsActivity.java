@@ -6,6 +6,8 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff.Mode;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 import edu.mst.tours.model.Building;
@@ -30,7 +33,8 @@ public class DirectionsActivity extends Activity {
 
 	private HashMap<String, Building> buildings;
 
-	private Button bt_getdirections, bt_finddepartment, bt_cur;
+	private Button bt_getdirections, bt_finddepartment;
+	private ImageButton bt_cur;
 	private Spinner sp_from, sp_to;
 	
 	private boolean useCur = false;
@@ -47,7 +51,7 @@ public class DirectionsActivity extends Activity {
 	private void loadViews() {
 		bt_getdirections = (Button) findViewById(R.directionsactivity.bt_getdirections);
 		bt_finddepartment = (Button) findViewById(R.directionsactivity.bt_finddepartment);
-		bt_cur = (Button) findViewById(R.directionsactivity.bt_cur);
+		bt_cur = (ImageButton) findViewById(R.directionsactivity.bt_cur);
 		ArrayAdapter<String> spinnersAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, new ArrayList<String>(buildings.keySet()));
 		spinnersAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp_from = (Spinner) findViewById(R.directionsactivity.sp_from);
@@ -59,13 +63,11 @@ public class DirectionsActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				useCur = !useCur;
-				if(useCur) {
-					bt_cur.setText(R.string.directionsactivity_nocurrentlocation);
-					sp_from.setEnabled(false);
-				} else {
-					bt_cur.setText(R.string.directionsactivity_usecurrentlocation);
-					sp_from.setEnabled(true);
-				}
+				int toast = !useCur ? R.string.directionsactivity_nocurrentlocation : R.string.directionsactivity_usecurrentlocation;
+				if(useCur) bt_cur.getBackground().setColorFilter(Color.CYAN, Mode.SRC_ATOP);
+				else bt_cur.getBackground().setColorFilter(null);
+				Toast.makeText(v.getContext(), toast, Toast.LENGTH_SHORT).show();
+				sp_from.setEnabled(!useCur);
 			}
 		});
 		
@@ -80,8 +82,8 @@ public class DirectionsActivity extends Activity {
 				}else{
 					Building buildingFrom = buildings.get(from);
 					Building buildingTo = buildings.get(to);
-					float startlat = 0;
-					float startlng = 0;
+					float startlat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
+					float startlng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
 					if(useCur) {
 						Criteria locCrit = new Criteria();
 						locCrit.setAccuracy(Criteria.ACCURACY_FINE);
@@ -97,10 +99,8 @@ public class DirectionsActivity extends Activity {
 						Location cur = lm.getLastKnownLocation(bProvider); 
 						startlat = (float) (cur.getLatitude());
 						startlng = (float) (cur.getLongitude());
-					} else {
-						startlat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
-						startlng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
 					}
+					
 					float deslat = (float) (buildingTo.getLocation().getLatitudeE6() / 1E6);
 					float deslng = (float) (buildingTo.getLocation().getLongitudeE6() / 1E6);
 
