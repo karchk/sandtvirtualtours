@@ -47,4 +47,9 @@ public class Building implements Comparable<Building> {
 	public int compareTo(Building other) {
 		return getName().compareTo(other.getName());
 	}
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

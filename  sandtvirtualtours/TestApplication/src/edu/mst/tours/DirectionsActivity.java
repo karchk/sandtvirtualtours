@@ -11,7 +11,6 @@ import android.graphics.PorterDuff.Mode;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,12 +21,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import edu.mst.tours.model.Building;
 import edu.mst.tours.parsers.BuildingsParser;
+import edu.mst.tours.util.MapsURLBuilder;
 
 public class DirectionsActivity extends Activity {
-
-	private final static String GOOGLEMAPS_URL_PREFIX = "http://maps.google.com/maps?saddr=";
-	private final static String GOOGLEMAPS_URL_TO_APPEND = "&daddr=";
-	private final static String GOOGLEMAPS_URL_TYPE_APPEND = "&dirflg=w";
 	
 	private final static Integer REQUESTCODE_FINDDEPARTMENT = 1;
 
@@ -82,8 +78,8 @@ public class DirectionsActivity extends Activity {
 				}else{
 					Building buildingFrom = buildings.get(from);
 					Building buildingTo = buildings.get(to);
-					float startlat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
-					float startlng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
+					float startLat = (float) (buildingFrom.getLocation().getLatitudeE6() / 1E6);
+					float startLng = (float) (buildingFrom.getLocation().getLongitudeE6() / 1E6);
 					if(useCur) {
 						Criteria locCrit = new Criteria();
 						locCrit.setAccuracy(Criteria.ACCURACY_FINE);
@@ -97,17 +93,15 @@ public class DirectionsActivity extends Activity {
 						String bProvider = lm.getBestProvider(locCrit, true);
 						
 						Location cur = lm.getLastKnownLocation(bProvider); 
-						startlat = (float) (cur.getLatitude());
-						startlng = (float) (cur.getLongitude());
+						startLat = (float) (cur.getLatitude());
+						startLng = (float) (cur.getLongitude());
 					}
 					
-					float deslat = (float) (buildingTo.getLocation().getLatitudeE6() / 1E6);
-					float deslng = (float) (buildingTo.getLocation().getLongitudeE6() / 1E6);
+					float desLat = (float) (buildingTo.getLocation().getLatitudeE6() / 1E6);
+					float desLng = (float) (buildingTo.getLocation().getLongitudeE6() / 1E6);
 
 					Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-							Uri.parse(GOOGLEMAPS_URL_PREFIX + startlat
-									+ ',' + startlng + GOOGLEMAPS_URL_TO_APPEND
-									+ deslat + ',' + deslng + GOOGLEMAPS_URL_TYPE_APPEND));
+							MapsURLBuilder.getFromPoint(startLat, startLng, desLat, desLng));
 					startActivity(intent);
 				}
 			}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:text="Choose destinations:"
+        android:gravity="center"
+        android:layout_margin="3dp"
+        android:textSize="20sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+touractivity/tv_title"/>
+    
+    <edu.mst.tours.view.DDListView
+        android:id="@android:id/list"
+        android:cacheColorHint="#00000000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="true"
+        android:clickable="false"
+        android:drawingCacheQuality="high"
+        android:layout_above="@+touractivity/bt_starttour"
+        android:layout_below="@+touractivity/tv_title"/>
+    
+    <Button
+        android:id="@+touractivity/bt_starttour"
+        android:text="Start tour!"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+    
+
+</RelativeLayout>
