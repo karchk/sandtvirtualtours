@@ -10,6 +10,8 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
 	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
+	public static final String TAG = "msttours";
 	
 	private Button bt_tour, bt_faq, bt_directions;
 	
