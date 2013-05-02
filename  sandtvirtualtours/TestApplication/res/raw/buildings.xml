@@ -29,4 +29,10 @@
 	<lng>-91.774021089077</lng>
 	<img>http://farm4.staticflickr.com/3064/3096410038_42392fcd4f_z.jpg</img>
   </building>
-</buildings>
+  <building>
+      <name>Butler-Carlton Hall</name>
+      <lat>37.95557648614955</lat>
+      <lng>-91.77241444587708</lng>
+      <img>http://care.mst.edu/media/academic/care/images/facilities/butlercarltonexterior.jpg</img>
+  </building>
+ </buildings>
