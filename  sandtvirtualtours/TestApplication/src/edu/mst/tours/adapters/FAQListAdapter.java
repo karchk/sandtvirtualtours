@@ -1,6 +1,8 @@
 package edu.mst.tours.adapters;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,25 +50,29 @@ public class FAQListAdapter extends BaseAdapter {
             
             holder = new FAQEntryHolder();
             holder.tvQuestion = (TextView) row.findViewById(R.faqentryrow.tvquestion);
-            holder.tvAnswer = (TextView) row.findViewById(R.faqentryrow.tvanswer);
             
             row.setTag(holder);
         }else{
             holder = (FAQEntryHolder) row.getTag();
-            holder.tvAnswer.setVisibility(View.INVISIBLE);
         }
 
-        FAQEntry entry = (FAQEntry) getItem(position);
+        final FAQEntry entry = (FAQEntry) getItem(position);
 
         holder.tvQuestion.setText(entry.getQuestion());
-        holder.tvAnswer.setText(entry.getAnswer());
         
         row.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				TextView tvAnswer = (TextView) v.findViewById(R.faqentryrow.tvanswer);
-				int visibility = tvAnswer.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.INVISIBLE;
-				tvAnswer.setVisibility(visibility);
+				Dialog d = new Dialog(v.getContext());
+				TextView tv = new TextView(v.getContext());
+				tv.setText(entry.getAnswer());
+				d.setTitle(entry.getQuestion());
+				TextView tv_title = ((TextView) d.findViewById(android.R.id.title));
+				tv_title.setLines(3);
+				tv_title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+				tv.setPadding(10, 10, 10, 10);
+				d.setContentView(tv);
+				d.show();
 			}
 		});
         return row;
@@ -77,5 +83,4 @@ public class FAQListAdapter extends BaseAdapter {
 class FAQEntryHolder
 {
 	TextView tvQuestion;
-    TextView tvAnswer;
 }
