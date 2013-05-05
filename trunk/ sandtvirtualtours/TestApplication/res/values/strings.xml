@@ -28,7 +28,7 @@
     <string name="findactivity_selectendbuilding">Select Destination Building</string>
     <string name="Enter_Dept_Name">Department Name</string>
     <string name="directionsactivity_buildingselectorprompt">Building Select</string>
-    <string name="title_activity_find">FindActivity</string>
+    <string name="title_activity_find">Find a Department</string>
     <string-array name="building_locs">
         <item>Computer Science, Rolla, MO</item>
         <item>Havener Center, 1346 N Bishop Ave, Rolla, MO</item>
